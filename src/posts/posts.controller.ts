@@ -9,28 +9,28 @@ export class PostsController {
         private readonly postService : PostsService
     ){}
 
-    @Get()
-    getAllPosts(){
-       return this.postService.getAllPosts();
-    }
+        @Get()
+        getAllPosts(){
+        return this.postService.getAllPosts();
+        }
 
-    @Get(':id')
-    getPostById(@Param('id', ParseIntPipe) id:number){
-        return  this.postService.getPostById(id);
-    }
+        @Get(':id')
+        getPostById(@Param('id', ParseIntPipe) id:number){
+            return  this.postService.getPostById(id);
+        }
 
-    @Post()
-    async createPost(@Body() post : CreatePostDto){
-        return this.postService.createPost(post);
-    }
+        @Post()
+        async createPost(@Body() post : CreatePostDto){
+            return this.postService.createPost(post);
+        }
 
-    @Put(':id')
-    async replacePost(@Param('id',ParseIntPipe)id:number, @Body() post : UpdatePostDto){
-        return  this.postService.replacePost(id,post);
-    }
+        @Put(':id')
+        async replacePost(@Param('id',ParseIntPipe)id:number, @Body() post : UpdatePostDto){
+            return  this.postService.replacePost(id,post);
+        }
 
-    @Delete(':id')
-    async deletePost(@Param('id',ParseIntPipe) id:number){
-        return this.postService.deletePost(id);
+        @Delete(':id')
+        async deletePost(@Param('id',ParseIntPipe) id:number){
+            return this.postService.deletePost(id);
+        }
     }
-}
